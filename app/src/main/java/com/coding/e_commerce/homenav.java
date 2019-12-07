@@ -1,5 +1,6 @@
 package com.coding.e_commerce;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -22,18 +23,17 @@ public class homenav extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homenav);
         Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle("Home");
+        toolbar.setTitle("Shopping Cart.in");
         setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-
-    }
+   }
 
     @Override
     public void onBackPressed() {
@@ -79,8 +79,11 @@ public class homenav extends AppCompatActivity
 
         } else if (id == R.id.nav_category) {
 
-        } else if (id == R.id.nav_wishlist) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.drawer_layout,new category()).commit();
 
+
+        } else if (id == R.id.nav_wishlist) {
+             getSupportFragmentManager().beginTransaction().replace(R.id.drawer_layout,new Wishlist()).commit();
         } else if (id == R.id.nav_orders) {
 
         } else if (id == R.id.nav_account) {

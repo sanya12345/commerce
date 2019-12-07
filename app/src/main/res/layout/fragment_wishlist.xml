@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Wishlist">
+    <Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#152238">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="19sp"
+            android:text="Shopping Cart.in"
+            android:textColor="@android:color/white"
+            android:drawableStart="@drawable/ic_arrow_back_black_24dp"/>
+
+    </Toolbar>
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/search"
+        android:layout_below="@+id/toolbar"
+        app:cardCornerRadius="5dp"
+        >
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:drawablePadding="40dp"
+            android:drawableStart="@drawable/ic_search_black_24dp"
+            android:layout_gravity="left|center"
+            android:text="Search for your product "/>
+    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_marginTop="8dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/search"
+        android:id="@+id/txt1"
+        >
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="+ Add an item"
+             android:contextClickable="true"
+             android:textSize="15sp"
+             android:textColor="#152238"/>
+
+    </android.support.v7.widget.CardView>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/txt1"
+        android:layout_marginTop="8dp"></ListView>
+
+
+</RelativeLayout>
