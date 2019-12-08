@@ -87,9 +87,10 @@ public class homenav extends AppCompatActivity
         } else if (id == R.id.nav_orders) {
 
         } else if (id == R.id.nav_account) {
-
+          getSupportFragmentManager().beginTransaction().replace(R.id.drawer_layout,new Account()).commit();
         }
         else if (id == R.id.nav_settings) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.drawer_layout,new settings()).commit();
 
         }else if (id == R.id.nav_notif) {
 
